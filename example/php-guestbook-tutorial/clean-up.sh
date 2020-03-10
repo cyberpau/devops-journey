@@ -5,7 +5,9 @@ if [[ 0 > 0 ]]
   exit
 fi
 
-  kubectl delete deployment -l app=redis
+  kubectl delete deployment frontend
+  kubectl delete deployment redis-master
+  kubectl delete deployment redis-slave
   kubectl delete service -l app=redis
   kubectl delete deployment -l app=guestbook
   kubectl delete service -l app=guestbook
