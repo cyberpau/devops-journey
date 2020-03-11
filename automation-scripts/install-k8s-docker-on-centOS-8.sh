@@ -7,14 +7,14 @@ if [[ $EUID > 0 ]]
 fi
 
 ### Update and install prerequisite tools
-dnf -y update
-dnf -y install net-tools wget telnet yum-utils device-mapper-persistent-data lvm2
+yum -y update
+yum -y install net-tools wget telnet yum-utils device-mapper-persistent-data lvm2
 
 ### Add Docker repository.
-dnf config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+yum config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
 
 ### Install Docker CE.
-dnf install -y docker-ce-18.06.2.ce
+yum install -y docker-ce-18.06.2.ce
 
 ## Create /etc/docker directory.
 mkdir /etc/docker
@@ -63,7 +63,7 @@ repo_gpgcheck=1
 gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
 EOF
 
-dnf -y install kubectl kubelet kubeadm
+yum -y install kubectl kubelet kubeadm
 systemctl  restart kubelet && systemctl enable kubelet
 
 # Enable IP Forwarding
@@ -79,4 +79,4 @@ systemctl daemon-reload
 systemctl restart kubelet
 
 # Install nfs utils for Kubernetes NFS driver
-dnf -y install nfs-utils
+yum -y install nfs-utils
