@@ -11,7 +11,7 @@ yum -y update
 yum -y install net-tools wget telnet yum-utils device-mapper-persistent-data lvm2
 
 ### Add Docker repository.
-yum config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 ### Install Docker CE.
 yum install -y docker-ce-18.06.2.ce
