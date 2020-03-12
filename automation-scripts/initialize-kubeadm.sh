@@ -6,6 +6,9 @@ if [[ 0 > 0 ]]
   exit
 fi
 
+systemctl disable firewalld
+systemctl stop firewalld
+
 kubeadm init
 
 mkdir -p /root/.kube
