@@ -10,6 +10,15 @@ fi
 yum -y update
 yum -y install net-tools wget telnet yum-utils device-mapper-persistent-data lvm2
 
+### Update host file
+cat >>/etc/hosts<<EOF
+# By using simple-NAT-vmnet0, the following ip addr are expected:
+# 172.16.0.3 will be the master, the rest of 172.16.0.X will be workers
+172.16.0.3 kmaster.example.com kmaster 
+172.16.0.4 kworker1.example.com kworker1
+172.16.0.5 kworker2.example.com kworker2
+EOF
+
 ### Add Docker repository.
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
@@ -80,3 +89,8 @@ systemctl restart kubelet
 
 ### Install nfs utils for Kubernetes NFS driver
 yum -y install nfs-utils
+
+### Disable firewall
+systemctl disable firewalld
+systemctl stop firewalld
+
