@@ -14,7 +14,9 @@
 
         `git checkout -b <new branch name>`
 
+4. Pushing changes to github
 
+    `git push origin new-feature`
 
 ## Generating new SSH key pair
 #### Source: https://docs.gitlab.com/ee/ssh/
