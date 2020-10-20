@@ -1,4 +1,4 @@
-# **My Kubernetes Journey** by John Paulo Mataac
+# **My DevOps Journey** by John Paulo Mataac
 
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
@@ -8,7 +8,7 @@ This compilation is mainly inspired by ["Kubernetes for Full Stack Developers"](
 For the full list of sources, you can take a look here.
 
 ## **Topics Covered**:
-1. [Create multi node Kubernetes Cluster using ansible and kubeadm on Centos 7](#Create-multi-node-Kubernetes-Cluster-using-ansible-and-kubeadm-on-Centos-7)
+1. [Create Multi Node Kubernetes Cluster using Ansible on Centos 7](#Create-Multi-Node-Kubernetes-Cluster-using-Ansible-on-Centos-7)
 2. [Building Helm Charts From the Ground Up](#Building-Helm-Charts-From-the-Ground-Up)
 3. [Key Notes for Modern Applications](#Key-Notes-for-Modern-Applications)
 4. [Running Jenkins slave agents in Kubernetes](#Running-Jenkins-slave-agents-in-Kubernetes)
@@ -27,7 +27,7 @@ For the full list of sources, you can take a look here.
 ------------
 
 
-## **Create multi node Kubernetes Cluster using ansible and kubeadm on Centos 7**
+## **Create Multi Node Kubernetes Cluster using Ansible on Centos 7**
 
 1. Run `./playbook/kube-dependencies` using ansible playbook.
 
