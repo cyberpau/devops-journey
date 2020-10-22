@@ -5,6 +5,8 @@
 
 This compilation is mainly inspired by ["Kubernetes for Full Stack Developers"](https://assets.digitalocean.com/books/kubernetes-for-full-stack-developers.pdf) book by DigitalOcean, ["Just me and Open Source"](https://www.youtube.com/channel/UC6VkhPuCCwR_kG0GExjoozg) Youtube Videos, and ["Cloud Native Computing Foundation (CNCF)"](https://www.youtube.com/c/cloudnativefdn/videos) Webinars.
 
+Our ideal goal is to learn and complete these [Roadmap](https://github.com/kamranahmedse/developer-roadmap)
+
 For the full list of sources, you can take a look here.
 
 ## **Topics Covered**:
@@ -12,7 +14,8 @@ For the full list of sources, you can take a look here.
 2. [Building Helm Charts From the Ground Up](#Building-Helm-Charts-From-the-Ground-Up)
 3. [Key Notes for Modern Applications](#Key-Notes-for-Modern-Applications)
 4. [Running Jenkins slave agents in Kubernetes](#Running-Jenkins-slave-agents-in-Kubernetes)
-5. [Build a Node.js Application with Docker](#Build-a-Node.js-Application-with-Docker)
+5. [How to use Statefulsets](#How-to-use-Statefulsets)
+6. [Build a Node.js Application with Docker](#Build-a-Node.js-Application-with-Docker)
 
 [👇](#Blank)
 
@@ -20,7 +23,7 @@ For the full list of sources, you can take a look here.
 
 | Role      | hostname      | vCPU | RAM | ipv4 address          | notes                                         |
 |-----------|---------------|------|-----|-----------------------|-----------------------------------------------|
-| master    | kmaster       |  2   | 2Gb | 192.168.1.15 /24      | Ansible, Helm, Kubernetes Dashboard           |
+| master    | kmaster       |  3   | 4Gb | 192.168.1.15 /24      | Ansible, Helm, Kubernetes Dashboard           |
 | worker    | kworker1      |  1   | 2Gb | 192.168.1.16 /24      |                                               |
 | worker    | kworker2      |  1   | 2Gb | 192.168.1.17 /24      |                                               |
 
@@ -31,7 +34,7 @@ For the full list of sources, you can take a look here.
 
 1. Run `./playbook/kube-dependencies` using ansible playbook.
 
-    ansible-playbook -i hosts kube-dependencies.yml -K
+        ansible-playbook -i hosts kube-dependencies.yml -K
 
 2. After this, run the following on each machines:
 
@@ -100,6 +103,9 @@ For the full list of sources, you can take a look here.
         helm repo add kubernetes-dashboard https://kubernetes.github.io/dashboard/
         helm install my-kube-dashboard kubernetes-dashboard/kubernetes-dashboard
     
+    To download a local copy from the repository
+
+        helm pull kubernetes-dashboard/kubernetes-dashboard
 
 3. To access our dashboard using NodePort, let us edit our service and replace ClusterIP with NodePort. Make sure we also set the port of nodePort (e.g. 32323)
 
@@ -200,7 +206,30 @@ For the full list of sources, you can take a look here.
 
 -----
 
+## **How to use Statefulsets**
+1. First install and setup nfs-utils
+
+        sudo yum intall nfs-utils -y
+        sudo systemctl enable nfs-server
+        sudo mkdir -p /srv/nfs/kubedata
+        sudo mkdir /srv/nfs/kubedata/{pv0,pv1,pv2,pv3,pv4}
+        
+2. Edit /etc/exports and add the following
+
+        /srv/nfs/kubedata       *(rw,sync,no_subtree_check,insecure)
+
+3. Edit folder permissions and mount the volume
+
+        sudo chmod -R 777 /srv/nfs
+        mount -t nfs 192.168.1.15:/srv/nfs/kubedata /mnt
+        ls /mnt
+
+
 ## **Build a Node.js Application with Docker**
+1. First, install npm
+
+        sudo yum install npm -y
+
 
 
 
