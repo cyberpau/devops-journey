@@ -16,7 +16,7 @@ For the full list of sources, you can take a look here.
 4. [Running Jenkins slave agents in Kubernetes](#Running-Jenkins-slave-agents-in-Kubernetes)
 5. [How to use Statefulsets](#How-to-use-Statefulsets)
 6. [Build a Node.js Application with Docker](#Build-a-Node.js-Application-with-Docker)
-
+7. [Puppet, Vagrant, Virtualbox](#Puppet,-Vagrant,-Virtualbox)
 [👇](#Blank)
 
 ## **Sample Machines**:
@@ -230,6 +230,11 @@ For the full list of sources, you can take a look here.
 
         sudo yum install npm -y
 
+
+## **Puppet, Vagrant, Virtualbox**
+This tutorial is based on LinkedIn course "Learning Puppet". On this steps, you will learn to provision your infrastucture using code (IaaC) by using Puppet.
+
+1. Install Vagrant and Virtualbox
 
 
 
