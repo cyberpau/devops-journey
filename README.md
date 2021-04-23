@@ -3,11 +3,18 @@
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
-This compilation is mainly inspired by ["Kubernetes for Full Stack Developers"](https://assets.digitalocean.com/books/kubernetes-for-full-stack-developers.pdf) book by DigitalOcean, ["Just me and Open Source"](https://www.youtube.com/channel/UC6VkhPuCCwR_kG0GExjoozg) Youtube Videos, and ["Cloud Native Computing Foundation (CNCF)"](https://www.youtube.com/c/cloudnativefdn/videos) Webinars.
+This compilation is mainly inspired by the following:
 
-Our ideal goal is to learn and complete these [Roadmap](https://github.com/kamranahmedse/developer-roadmap)
+- ["Kubernetes for Full Stack Developers"](https://assets.digitalocean.com/books/kubernetes-for-full-stack-developers.pdf) book by DigitalOcean
 
-For the full list of sources, you can take a look here.
+- ["Just me and Open Source"](https://www.youtube.com/channel/UC6VkhPuCCwR_kG0GExjoozg) Youtube Videos
+
+- ["Cloud Native Computing Foundation (CNCF)"](https://www.youtube.com/c/cloudnativefdn/videos) Webinars
+
+- ["Become a DevOps Engineer"](https://www.linkedin.com/learning/paths/become-a-devops-engineer) LinkedIn Learning Path
+
+- ["Developer Roadmap"](https://github.com/kamranahmedse/developer-roadmap)
+
 
 ## **Topics Covered**:
 1. [Create Multi Node Kubernetes Cluster using Ansible on Centos 7](#Create-Multi-Node-Kubernetes-Cluster-using-Ansible-on-Centos-7)
