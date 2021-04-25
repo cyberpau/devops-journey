@@ -22,4 +22,4 @@ then `exec bash` and `source .bash_profile`
 16. <pre><code>
 mkdir /etc/puppetlabs/r10k
 vi /etc/puppetlabs/r10k/r10k.yaml
-</code></pre> and finally deploy the puppet code by `r10k deploy environment -p`
+</code></pre> and finally deploy the puppet code by `r10k deploy environment -p` and `puppet agent -t`
