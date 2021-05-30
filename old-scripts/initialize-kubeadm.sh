@@ -11,9 +11,9 @@ systemctl stop firewalld
 
 kubeadm init
 
-mkdir -p /root/.kube
-sudo cp -i /etc/kubernetes/admin.conf /root/.kube/config
-sudo chown 0:0 /root/.kube/config
+mkdir -p $HOME/.kube
+sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 
 # Configure network overlay using Flannel
